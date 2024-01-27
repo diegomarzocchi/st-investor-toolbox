@@ -1,0 +1,10 @@
+streamlit
+yfinance
+datetime
+timedelta
+timezone
+pytz
+tzlocal
+plotly.express
+pandas
+numpy
