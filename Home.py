@@ -15,3 +15,4 @@ st.write('''
         
         If you have suggestions, tell us!
         ''')
+st.link_button("Contact me!", "https://www.linkedin.com/in/diegomarzocchi", help=None, type="secondary", use_container_width=False)
