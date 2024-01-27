@@ -21,7 +21,7 @@ The app is available at https://investortoolbox.streamlit.app/, it can also be d
 3. Access the web app in your browser at `http://localhost:8501`.
 
 ## Feedback
-Do you have any ideas or suggestions, or did you find any bugs? [Contact me](www.linkedin.com/in/diegomarzocchi).
+Do you have any ideas or suggestions, or did you find any bugs? [Contact me](https://www.linkedin.com/in/diegomarzocchi).
 I would love to hear your opinion! 💡 Thank you.
 
 ## License
