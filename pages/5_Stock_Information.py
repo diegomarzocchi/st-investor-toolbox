@@ -59,8 +59,12 @@ selected_function = st.selectbox('Select the function to execute:', function_opt
 
 # Button to get data
 if st.button('Execute'):
-    # Use st.spinner to show a spinner while the function is executing
-    with st.spinner("Fetching data..."):
-        data = get_data(ticker_input, selected_function)
-        st.subheader(f'Results for {selected_function} of {ticker_input}')
-        st.write(data)
+    if not ticker_input.strip():
+        # Display an error if no ticker symbol are provided
+        st.error("Please enter one ticker symbol.")
+    else:
+        # Use st.spinner to show a spinner while the function is executing
+        with st.spinner("Fetching data..."):
+            data = get_data(ticker_input, selected_function)
+            st.subheader(f'Results for {selected_function} of {ticker_input}')
+            st.write(data)
