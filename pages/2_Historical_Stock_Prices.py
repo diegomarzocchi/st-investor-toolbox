@@ -22,7 +22,7 @@ def get_historical_price(ticker, start_date, end_date, selected_interval):
 
     # Check if the DataFrame is empty
     if df_historical.empty:
-        return "No stock price available for the selected data", "", ""
+        st.error(f"Error fetching data.")
 
     return df_historical
 
@@ -66,9 +66,13 @@ selected_interval = st.selectbox("Select Interval:", interval_options)
 # Button to get historical stock price
 if st.button("Get Historical Price"):
     # Use st.spinner to show a spinner while the function is executing
-    with st.spinner("Fetching historical data..."):
-        # Call the function to get the stock price
-        dfhistorical = get_historical_price(ticker, start_date, end_date, selected_interval)
+    if not ticker.strip():
+        # Display an error if no ticker symbols are provided
+        st.error("Please enter one ticker symbol.")
+    else:
+        with st.spinner("Fetching historical data..."):
+            # Call the function to get the stock price
+            dfhistorical = get_historical_price(ticker, start_date, end_date, selected_interval)
 
-        # Show the results
-        st.dataframe(dfhistorical)
+            # Show the results
+            st.dataframe(dfhistorical)
