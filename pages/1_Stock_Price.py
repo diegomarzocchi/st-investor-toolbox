@@ -107,12 +107,20 @@ timezone_str = st.selectbox("Select Timezone:", pytz.all_timezones, index=pytz.a
 # Button to get the stock price
 if st.button("Get Stock Price"):
     # Use st.spinner to show a spinner while the function is executing
-    with st.spinner("Fetching data..."):
-        # Call the function to get the stock price
-        target_datetime = datetime.combine(selected_date, selected_time)
-        company, market_date, result = get_stock_price(ticker, target_datetime, timezone_str, selected_interval)
+    if not ticker.strip():
+        # Display an error if no ticker symbol are provided
+        st.error("Please enter one ticker symbol.")
+    elif selected_time is None:
+        # Display an error if no time are provided
+        st.error("Please select time.")
+        # Use st.spinner to show a spinner while the function is executing
+    else:
+        with st.spinner("Fetching data..."):
+            # Call the function to get the stock price
+            target_datetime = datetime.combine(selected_date, selected_time)
+            company, market_date, result = get_stock_price(ticker, target_datetime, timezone_str, selected_interval)
 
-        # Show the results
-        st.markdown(company)
-        st.markdown(market_date)
-        st.markdown(result)
+            # Show the results
+            st.markdown(company)
+            st.markdown(market_date)
+            st.markdown(result)
