@@ -3,7 +3,20 @@ import streamlit as st
 st.set_page_config(
         page_title="Investor Toolbox",
         page_icon=":chart_with_upwards_trend:",
-        layout="wide"
+        layout="wide",
+        menu_items={
+                'About':
+                '''
+                Disclaimer:
+                The information provided by this application is for informational purposes only and should not be considered as financial or investment advice. The user assumes full responsibility for any decision or action taken based on the information provided by this application.
+                
+                The application does not guarantee the accuracy, completeness, or timeliness of the information provided. Stock market data and any other financial information may be subject to change without notice. The user should verify the accuracy of the information before making any decisions.
+                
+                The use of this application is subject to acceptance of the terms and conditions set forth. The application and its developers are not responsible for losses, damages, or harm arising from the use of the provided information.
+                
+                It is strongly recommended that the user consult with a professional financial advisor before making investment decisions. Investing in stocks and other financial instruments carries risks, and the user should fully understand those risks before proceeding.
+                '''
+        }
 )
 
 st.title("Investor Toolbox")
