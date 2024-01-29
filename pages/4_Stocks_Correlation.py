@@ -61,23 +61,27 @@ selected_period = st.selectbox("Select Period:", period_options)
 
 # Button to get historical stock price
 if st.button("Stocks Correlation"):
-    # Use st.spinner to show a spinner while the function is executing
-    with st.spinner("Calculating the correlation..."):
-        # Call the function to get the stock price
-        corr_matrix = stocks_correlation(input_tickers, selected_period)
+    if len(tickers) < 2:
+        # Display an error if no ticker symbols are provided
+        st.error("Please enter at least two tickers symbols.")
+    else:
+        # Use st.spinner to show a spinner while the function is executing
+        with st.spinner("Calculating the correlation..."):
+            # Call the function to get the stock price
+            corr_matrix = stocks_correlation(input_tickers, selected_period)
 
-        # Show the results
-        # Create a heatmap plot with Plotly Express
-        fig = px.imshow(corr_matrix,
-                        labels=dict(color="Correlation"),
-                        x=corr_matrix.columns,
-                        y=corr_matrix.columns,
-                        color_continuous_scale="rdbu",
-                        text_auto=True,
-                        zmin=-1, zmax=1)
+            # Show the results
+            # Create a heatmap plot with Plotly Express
+            fig = px.imshow(corr_matrix,
+                            labels=dict(color="Correlation"),
+                            x=corr_matrix.columns,
+                            y=corr_matrix.columns,
+                            color_continuous_scale="rdbu",
+                            text_auto=True,
+                            zmin=-1, zmax=1)
 
-        # Additional chart layout settings
-        fig.update_layout(width=800, height=600, title_text="Correlation Matrix")
+            # Additional chart layout settings
+            fig.update_layout(width=800, height=600, title_text="Correlation Matrix")
 
-        # Show the results
-        st.plotly_chart(fig)
+            # Show the results
+            st.plotly_chart(fig)
