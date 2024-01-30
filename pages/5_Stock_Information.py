@@ -23,6 +23,7 @@ def get_data(ticker, function):
         'Insider Roster Holders': ticker_obj.insider_roster_holders,
         'Recommendations': ticker_obj.recommendations,
         'Upgrades Downgrades': ticker_obj.upgrades_downgrades,
+        'Earnings Dates': ticker_obj.earnings_dates,
         'News': ticker_obj.news
     }
 
@@ -64,7 +65,7 @@ function_options = [
     'Balance Sheet', 'Quarterly Balance Sheet', 'Cashflow', 'Quarterly Cashflow',
     'Major Holders', 'Institutional Holders', 'Mutualfund Holders',
     'Insider Transactions', 'Insider Purchases', 'Insider Roster Holders',
-    'Recommendations', 'Upgrades Downgrades', 'News'
+    'Recommendations', 'Upgrades Downgrades', 'Earnings Dates', 'News'
 ]
 
 selected_function = st.selectbox('Select the function to execute:', function_options)
