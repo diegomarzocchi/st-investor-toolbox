@@ -1,7 +1,9 @@
-numpy
-pandas
-plotly
-pytz
 streamlit
-tzlocal
 yfinance
+datetime
+timedelta
+pytz
+tzlocal
+plotly.express
+pandas
+numpy
