@@ -1,9 +1,7 @@
-streamlit
-yfinance
-datetime
-timedelta
-pytz
-tzlocal
-plotly.express
-pandas
-numpy
+numpy==1.26.3
+pandas==2.2.0
+plotly==5.18.0
+pytz==2023.3.post1
+streamlit==1.30.0
+tzlocal==5.2
+yfinance==0.2.36
