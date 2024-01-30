@@ -23,7 +23,6 @@ def get_data(ticker, function):
         'Insider Roster Holders': ticker_obj.insider_roster_holders,
         'Recommendations': ticker_obj.recommendations,
         'Upgrades Downgrades': ticker_obj.upgrades_downgrades,
-#        'Earnings Dates': ticker_obj.earnings_dates,
         'News': ticker_obj.news
     }
 
